@@ -27,7 +27,14 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-
+      - name: Setup Ballerina Language
+        # You may pin to the exact commit or the version.
+        # uses: ballerina-platform/setup-ballerina@4da4fb67d0fa14f2ea4f9b515f605ca944a56adf
+        uses: ballerina-platform/setup-ballerina@v1.1.0
+        with:
+          # Ballerina Version
+          version:  2201.9.0
+          
       # Configure Gradle for optimal use in GiHub Actions, including caching of downloaded dependencies.
       # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
       - name: Setup Gradle
