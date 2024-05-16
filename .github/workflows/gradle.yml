@@ -34,7 +34,6 @@ jobs:
         run: ./gradlew build -x check -x test
 
       - name: Ballerina Central Dev Push
-        if: ${{ github.event.inputs.environment == 'DEV CENTRAL' }}
         env:
             BALLERINA_DEV_CENTRAL: true
             BALLERINA_STAGE_CENTRAL: false
@@ -43,4 +42,5 @@ jobs:
             packagePAT: ${{ secrets.BALLERINA_BOT_TOKEN }}
             GITHUB_TOKEN: ${{ secrets.BALLERINA_BOT_TOKEN }}
         run: |
+            sed -i 's/version=\(.*\)-SNAPSHOT/version=\1/g' gradle.properties
             ./gradlew clean build -x test -x check -PpublishToCentral=true
