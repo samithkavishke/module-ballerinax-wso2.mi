@@ -18,14 +18,29 @@
 
 import org.apache.tools.ant.taskdefs.condition.Os
 
+buildscript {
+    repositories {
+        maven {
+            url = 'https://maven.pkg.github.com/ballerina-platform/plugin-gradle'
+            credentials {
+                username System.getenv("packageUser")
+                password System.getenv("packagePAT")
+            }
+        }
+    }
+    dependencies {
+        classpath "io.ballerina:plugin-gradle:${project.ballerinaGradlePluginVersion}"
+    }
+}
+
 tasks.register('localPublish') {
     doLast {
         // Push the MI Tools package to the local repository
         exec {
             if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-                commandLine 'cmd', "/c", "bal pack && bal push"
+                commandLine 'cmd', "/c", "bal pack && bal push --repository=local"
             } else {
-                commandLine 'sh', "-c", "bal pack && bal push"
+                commandLine 'sh', "-c", "bal pack && bal push --repository=local"
             }
         }
         println("Successfully pushed the MI Tools package to the local.")
