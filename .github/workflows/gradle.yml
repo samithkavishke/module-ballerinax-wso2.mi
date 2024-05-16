@@ -34,7 +34,6 @@ jobs:
         run: ./gradlew build -x check -x test
 
       - name: Ballerina Central Dev Push
-        if: ${{ github.event.inputs.environment == 'DEV CENTRAL' }}
         env:
             BALLERINA_DEV_CENTRAL: true
             BALLERINA_STAGE_CENTRAL: false
