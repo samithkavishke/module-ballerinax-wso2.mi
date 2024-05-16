@@ -5,13 +5,13 @@
 
 [ballerina]
 dependencies-toml-version = "2"
-distribution-version = "2201.9.0"
+distribution-version = "2201.9.0-20240502-141200-0a49fa42"
 
 [[package]]
-org = "ballerinax"
+org = "samithk"
 name = "mi"
 version = "0.1.0"
 modules = [
-	{org = "ballerinax", packageName = "mi", moduleName = "mi"}
+	{org = "samithk", packageName = "mi", moduleName = "mi"}
 ]
 
