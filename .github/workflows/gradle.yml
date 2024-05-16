@@ -27,10 +27,6 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
 
-      - name: Increment Ballerina Version
-        run: |
-          sed -i 's/version = "\(.*\)"/version = "\1-$(date +%s)"/' Ballerina.toml
-
       - name: Build with Gradle Wrapper
         env:
           packageUser: ${{ github.actor }}
