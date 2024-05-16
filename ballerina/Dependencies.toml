@@ -10,7 +10,7 @@ distribution-version = "2201.9.0-20240502-141200-0a49fa42"
 [[package]]
 org = "samithk"
 name = "mi"
-version = "0.1.0"
+version = "0.1.1"
 modules = [
 	{org = "samithk", packageName = "mi", moduleName = "mi"}
 ]

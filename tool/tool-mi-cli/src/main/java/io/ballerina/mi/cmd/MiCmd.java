@@ -38,9 +38,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Objects;
 
-@CommandLine.Command(name = "mi", description = "Generate MI connector")
+@CommandLine.Command(name = "mi_samith", description = "Generate MI connector")
 public class MiCmd implements BLauncherCmd {
-    private static final String CMD_NAME = "mi";
+    private static final String CMD_NAME = "mi_samith";
     private final PrintStream printStream;
     @CommandLine.Option(names = {"--help", "-h"}, usageHelp = true)
     private boolean helpFlag;

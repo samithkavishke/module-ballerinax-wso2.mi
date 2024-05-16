@@ -15,7 +15,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
 import org.apache.tools.ant.taskdefs.condition.Os
 
 plugins {
@@ -39,9 +38,11 @@ build {
     doLast {
         exec {
             if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+                commandLine 'cmd', "/c", "set BALLERINA_DEV_CENTRAL=true"
                 commandLine 'cmd', "/c", "bal pack && bal push"
+
             } else {
-                commandLine 'sh', "-c", "bal pack && bal push --repository=local"
+                commandLine 'sh', "-c", "BALLERINA_DEV_CENTRAL=true bal pack && bal push"
             }
         }
         println("Successfully pushed the MI Tools package.")

@@ -8,10 +8,10 @@ dependencies-toml-version = "2"
 distribution-version = "2201.9.0-20240502-141200-0a49fa42"
 
 [[package]]
-org = "ballerinax"
+org = "samithk"
 name = "tool_mi"
-version = "0.1.0"
+version = "0.1.1"
 modules = [
-	{org = "ballerinax", packageName = "tool_mi", moduleName = "tool_mi"}
+	{org = "samithk", packageName = "tool_mi", moduleName = "tool_mi"}
 ]
 
