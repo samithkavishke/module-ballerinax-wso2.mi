@@ -41,7 +41,7 @@ tasks.register('localPublish') {
                 commandLine 'cmd', "/c", "set BALLERINA_DEV_CENTRAL=true"
                 commandLine 'cmd', "/c", "bal pack && bal push"
             } else {
-                commandLine 'sh', "-c", "BALLERINA_DEV_CENTRAL=true bal pack && bal push"
+                commandLine 'sh', "-c", "BALLERINA_DEV_CENTRAL=true && bal pack && bal push"
             }
         }
         println("Successfully pushed the MI Tools package to the local.")
